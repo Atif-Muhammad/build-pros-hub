@@ -94,10 +94,10 @@ const Home = () => {
             Quality craftsmanship, on-time delivery, and exceptional service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-              Request Free Quote
+            <Button variant="hero" size="lg" className="text-lg px-8 py-4" onClick={() => window.location.href = '/contact'}>
+              Contact Us
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 bg-white/10 backdrop-blur border-white text-white hover:bg-white hover:text-gray-900">
+            <Button variant="outline" size="lg" className="text-lg px-8 py-4 bg-white/10 backdrop-blur border-white text-white hover:bg-white hover:text-gray-900" onClick={() => window.location.href = '/projects'}>
               View Our Work
             </Button>
           </div>
@@ -141,7 +141,14 @@ const Home = () => {
                     {service.description}
                   </CardDescription>
                   <div className="text-center mt-6">
-                    <Button variant="outline">Learn More</Button>
+                    <Button variant="outline" onClick={() => {
+                      const serviceMap: { [key: string]: string } = {
+                        'Residential Construction': '/services#residential',
+                        'Commercial Construction': '/services#commercial', 
+                        'Remodeling & Renovation': '/services#renovation'
+                      };
+                      window.location.href = serviceMap[service.title] || '/services';
+                    }}>Learn More</Button>
                   </div>
                 </CardContent>
               </Card>
@@ -182,7 +189,7 @@ const Home = () => {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button variant="default" size="lg">
+            <Button variant="default" size="lg" onClick={() => window.location.href = '/projects'}>
               View All Projects
             </Button>
           </div>
@@ -240,12 +247,9 @@ const Home = () => {
             Get a free consultation and quote for your next construction project. 
             Our experts are ready to bring your vision to life.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="cta" size="lg" className="text-lg px-8 py-4">
-              Get Free Quote
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary">
-              Call (555) 123-4567
+          <div className="flex justify-center">
+            <Button variant="cta" size="lg" className="text-lg px-8 py-4" onClick={() => window.location.href = '/contact'}>
+              Contact Us
             </Button>
           </div>
         </div>

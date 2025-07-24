@@ -70,9 +70,6 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="cta" size="sm">
-                Get Quote
-              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -107,11 +104,6 @@ const Navigation = () => {
                     {item.label}
                   </Link>
                 ))}
-                <div className="px-3 py-2">
-                  <Button variant="cta" className="w-full">
-                    Get Quote
-                  </Button>
-                </div>
               </div>
             </div>
           )}
